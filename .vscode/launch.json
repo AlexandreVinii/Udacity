@@ -4,6 +4,14 @@
     // Para obter mais informações, visite: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [
+        
+        {
+            "name": "External Terminal/Console",
+            "type": "python",
+            "request": "launch",
+            "program": "${file}",
+            "console": "externalTerminal"
+        },
         {
             "name": "Python: Current File",
             "type": "python",
