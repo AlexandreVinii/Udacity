@@ -35,5 +35,5 @@ for cargo_name, cargo_weight in manifest:
         items.append(cargo_name)
         weight += cargo_weight
 
-print("\nFinal Weight: {}".format(weight))
+print("\n\nFinal Weight: {}".format(weight))
 print("Final Items: {}".format(items))
