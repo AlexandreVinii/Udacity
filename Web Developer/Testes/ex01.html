@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Linhas de base</title>
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Source Sans Pro', sans-serif;
+      font-weight: bold;
+      font-size: 14pt;
+    }
+    .bordered {
+      border: 2px solid #2e3d49;
+    }
+                    
+                        span {
+      display: inline-block; /* para que eu possa configurar uma largura */
+      width: 10em; /* com uma largura limitada, o texto é forçado a quebrar a linha */
+    }
+  </style>
+</head>
+<body>
+  <div class="parent bordered">
+    <span>Isto é texto.</span>
+    <span>Isto é mais texto.</span>
+    <span>Isto é texto que se estende por algumas linhas para que você possa ver que a sua linha de base é mais baixa.</span>
+  </div>
+</body>
+</html>
