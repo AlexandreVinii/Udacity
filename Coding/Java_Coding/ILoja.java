@@ -1,7 +1,9 @@
-public class ILoja{
+import com.sun.javafx.image.impl.ByteIndexed.Getter;
 
-    public static void getInfo(){
-        
+public class ILoja {
+
+    public static void getInfo() {
+
     }
-    
+
 }
