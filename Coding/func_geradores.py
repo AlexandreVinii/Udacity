@@ -1,4 +1,5 @@
-lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow", "Functions", "Scripting"]
+lessons = ["Why Python Programming", "Data Types and Operators", "Control Flow",
+            "Functions", "Scripting"]
 
 def my_enumerate(iterable, start=0):
     count = start
