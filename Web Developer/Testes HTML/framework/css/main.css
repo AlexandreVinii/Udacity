@@ -1,4 +1,5 @@
 * {
+    font-family: 'Lato', sans-serif;
     border: 1px solid red !important;
 }
 
@@ -7,6 +8,12 @@
     -moz-box-sizing: border-box;
     -ms-box-sizing: border-box;
     box-sizing: border-box;
+}
+
+@media screen and (max-width: 650px) {
+    p {
+        display: none;
+    }
 }
 
 .grid {
@@ -67,4 +74,16 @@
 
 .col-12 {
     width: 100%;
+}
+
+.pag-1 {
+    margin: 10px;
+}
+
+.pag-2 {
+    margin: 10px;
+}
+
+.pag-3 {
+    margin: 0 auto;
 }
