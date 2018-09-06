@@ -2,5 +2,5 @@
     "python.linting.pylintEnabled": false,
     "git.ignoreLimitWarning": true,
     "python.formatting.provider": "autopep8",
-    "python.pythonPath": "/usr/local/bin/python3"
+    "python.pythonPath": "/Users/Alexandre/anaconda3/bin/python"
 }

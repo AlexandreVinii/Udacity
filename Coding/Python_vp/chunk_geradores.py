@@ -5,3 +5,4 @@ def chunker(iterable, size):
 
 for chunk in chunker(range(28), 3):
     print(list(chunk))
+    
