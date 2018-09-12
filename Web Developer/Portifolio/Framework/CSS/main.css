@@ -34,13 +34,13 @@ img {
 }
 
 .row-img1 {
-    padding-right: 20px;
+    max-width: 100%;
 }
 
 .row-img3 {
-    padding-right: 20px;
+    max-width: 100%;
 }
 
 .row-img2 {
-    padding-right: 20px;
+    max-width: 100%;
 }

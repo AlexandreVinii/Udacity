@@ -51,8 +51,6 @@ def data_list20(data_list=[]):
     return lista20
 
 # função para imprimir os dados enumeradosm, Solicitados.
-
-
 def print_list():
     for c, lista in enumerate(data_list20(data_list), 1):
         print('\n\n{}º  --- Dado Solicitado ---\n {}'.format(c, list(lista)))
@@ -71,18 +69,16 @@ input("Aperte Enter para continuar...")
 
 print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 
+
 # Função que percorre pela coluna 'genero' e adiciona os dados em uma lista
-
-
 def data_genero(data_list):
     genero = []
     for gen in [j[-2] for j in data_list[:20]]:
         genero.append(gen)
     return genero
 
+
 # Função que imprime e enumera os generos
-
-
 def print_genero():
     for c, lista in enumerate(data_genero(data_list), 1):
         print('\n\n[{}º] Linha - Colun6 -- Gênero: [{}]'.format(c, lista))
@@ -96,9 +92,8 @@ input("Aperte Enter para continuar...")
 # TAREFA 3
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
+
 # Funcao que retorna uma lista de uma coluna X
-
-
 def column_to_list(data, index):
     column_list = []
     for i in [j[index] for j in data]:
@@ -151,10 +146,8 @@ input("\n\nAperte Enter para continuar...\n")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
-# Função que retorna o tamanho de duas listas de gêneros, Homens e Mulheres.
-
-
 def count_gender(data_list):
+# Função que retorna o tamanho de duas listas de gêneros, Homens e Mulheres.
     male = []
     female = []
     for gen in column_to_list(data_list, -2):
@@ -183,10 +176,10 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função que pegue o gênero mais popular, e retorne este gênero como uma string.
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
-# Função que retorna uma string com qual gênero é mais popular.
 
 
 def most_popular_gender(data_list):
+# Função que retorna uma string com qual gênero é mais popular.
     answer = ""
     male = []
     female = []
@@ -228,10 +221,10 @@ plt.show(block=True)
 
 input("Aperte Enter para continuar...")
 
-# Função que conta os tipos da coluna 'types' para montar o gráfico Tarefa 7
 
 
 def count_types(data_list):
+# Função que conta os tipos da coluna 'types' para montar o gráfico Tarefa 7
     type_list1 = []
     type_list2 = []
     for types in column_to_list(data_list, -3):
@@ -284,17 +277,9 @@ median_trip = 0.
 
 size = len(trip_duration_list)
 total_time = 0
+# Variavel
 min_trip = int(sorted(trip_duration_list)[0])
 max_trip = int(sorted(trip_duration_list)[-1])
-
-# Laço for que encontra o maior e menor valor 'trip_duration'
-for i in range(0, size):
-    time = int(trip_duration_list[i])
-    total_time += int(time)
-    if time >= max_trip:
-        max_trip = time
-    if time <= min_trip:
-        min_trip = time
 
 # lista ordenada criada por um dicionario com chave int
 ord_list = sorted(trip_duration_list, key=int)
