@@ -271,7 +271,7 @@ median_trip = 0.
 
 size = len(trip_duration_list)
 total_time = 0
-# Variavel
+
 
 
 for i in range(0, size):
