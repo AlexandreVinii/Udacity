@@ -7,10 +7,9 @@ import time
 # Vamos ler os dados como uma lista
 print("Lendo o documento...")
 
-# Função abre o arquivo e retorna uma lista de dados do arquivo 'chicago.csv'
-
 
 def create_data_list(filename):
+    # Função abre o arquivo e retorna uma lista de dados do arquivo 'chicago.csv'
     data_list = []
     with open(filename) as file_read:
         for line in file_read:
@@ -41,17 +40,17 @@ input("Aperte Enter para continuar...")
 # TODO: Imprima as primeiras 20 linhas usando um loop para identificar os dados.
 print("\n\nTAREFA 1: Imprimindo as primeiras 20 amostras")
 
-# Função recebe uma lista, e mostra apenas os 20 primeiros dados.
-
 
 def data_list20(data_list=[]):
+    # Função recebe uma lista, e mostra apenas os 20 primeiros dados.
     lista20 = []
     for i in data_list[:20]:
         lista20.append(i)
     return lista20
 
-# função para imprimir os dados enumeradosm, Solicitados.
+
 def print_list():
+    # Função para imprimir os dados enumeradosm, Solicitados.
     for c, lista in enumerate(data_list20(data_list), 1):
         print('\n\n{}º  --- Dado Solicitado ---\n {}'.format(c, list(lista)))
 
@@ -73,15 +72,15 @@ print("\nTAREFA 2: Imprimindo o gênero das primeiras 20 amostras")
 # Função que percorre pela coluna 'genero' e adiciona os dados em uma lista
 def data_genero(data_list):
     genero = []
-    for gen in [j[-2] for j in data_list[:20]]:
+    for gen in [j[-2] for j in data_list]:
         genero.append(gen)
     return genero
 
 
-# Função que imprime e enumera os generos
 def print_genero():
-    for c, lista in enumerate(data_genero(data_list), 1):
-        print('\n\n[{}º] Linha - Colun6 -- Gênero: [{}]'.format(c, lista))
+    # Função que imprime e enumera os generos
+    for i, line in enumerate(data_list[:20], start=1):
+        print(f"Linha : {i}\tGênero: {line[-2]}")
 
 
 print_genero()
@@ -93,8 +92,8 @@ input("Aperte Enter para continuar...")
 # TODO: Crie uma função para adicionar as colunas(features) de uma lista em outra lista, na mesma ordem
 
 
-# Funcao que retorna uma lista de uma coluna X
 def column_to_list(data, index):
+    # Funcao que guarda os dados de uma coluna 'x', e retorna em uma lista
     column_list = []
     for i in [j[index] for j in data]:
         column_list.append(i)
@@ -146,16 +145,17 @@ input("\n\nAperte Enter para continuar...\n")
 # TODO: Crie uma função para contar os gêneros. Retorne uma lista.
 # Isso deveria retornar uma lista com [count_male, count_female] (exemplo: [10, 15] significa 10 Masculinos, 15 Femininos)
 
+
 def count_gender(data_list):
-# Função que retorna o tamanho de duas listas de gêneros, Homens e Mulheres.
-    male = []
-    female = []
+    # Função que retorna a contagem de gênero, male e famamle.
+    male_count = 0
+    female_count = 0
     for gen in column_to_list(data_list, -2):
         if gen.lower() == 'male':
-            male.append(gen)
+            male_count += 1
         elif gen.lower() == 'female':
-            female.append(gen)
-    return [len(male), len(female)]
+            female_count += 1
+    return [male_count, female_count]
 
 
 print("TAREFA 5: Imprimindo o resultado de count_gender")
@@ -177,23 +177,15 @@ input("Aperte Enter para continuar...")
 # Esperamos ver "Masculino", "Feminino", ou "Igual" como resposta.
 
 
-
 def most_popular_gender(data_list):
-# Função que retorna uma string com qual gênero é mais popular.
-    answer = ""
-    male = []
-    female = []
-    for gen in column_to_list(data_list, -2):
-        if gen.lower() == 'male':
-            male.append(gen)
-        elif gen.lower() == 'female':
-            female.append(gen)
-        if len(male) > len(female):
-            answer = 'Masculino'
-        elif len(female) > len(male):
-            answer = 'Feminino'
-        else:
-            answer = 'Igual'
+    # Função que recebe um gênero, e retorna uma 'string' com o gênero mais popular.
+    male, female = count_gender(data_list)
+    if male > female:
+        answer = 'Masculino'
+    elif female > male:
+        answer = 'Feminino'
+    else:
+        answer = 'Igual'
     return answer
 
 
@@ -222,9 +214,8 @@ plt.show(block=True)
 input("Aperte Enter para continuar...")
 
 
-
 def count_types(data_list):
-# Função que conta os tipos da coluna 'types' para montar o gráfico Tarefa 7
+    # Função que conta os tipos da coluna 'types' para montar o gráfico Tarefa 7
     type_list1 = []
     type_list2 = []
     for types in column_to_list(data_list, -3):
@@ -269,25 +260,36 @@ input("Aperte Enter para continuar...")
 # TAREFA 9
 # TODO: Ache a duração de viagem Mínima, Máxima, Média, e Mediana.
 # Você não deve usar funções prontas parTODO isso, como max() e min().
+
+# Variável que recebe uma função, e retorna uma lista de coluna.
 trip_duration_list = column_to_list(data_list, 2)
-min_trip = 0.
-max_trip = 0.
+
+min_trip = int(sorted(trip_duration_list)[0])
+max_trip = int(sorted(trip_duration_list)[-1])
 mean_trip = 0.
 median_trip = 0.
 
 size = len(trip_duration_list)
 total_time = 0
 # Variavel
-min_trip = int(sorted(trip_duration_list)[0])
-max_trip = int(sorted(trip_duration_list)[-1])
 
-# lista ordenada criada por um dicionario com chave int
+
+for i in range(0, size):
+    # Laço for que encontra o maior e o menor valor da coluna 'trip_duration'.
+    time = int(trip_duration_list[i])
+    total_time += int(time)
+    if time >= max_trip:
+        max_trip = time
+    if time <= min_trip:
+        min_trip = time
+
+# Lista ordenada criada por um dicionario com chave int.
 ord_list = sorted(trip_duration_list, key=int)
 size = len(trip_duration_list)
 i = int((size) // 2)
 
-# Condicional que calcula a mediana da coluna 'trip_duration'
 if (size % 2 == 0):
+    # Condicional que calcula a mediana da coluna 'trip_duration'.
     median_trip = eval((ord_list[i] + ord_list[i + 1]) / 2.0)
 else:
     median_trip = int(ord_list[i])
@@ -344,18 +346,20 @@ answer = "yes"
 
 
 def count_items(column_list):
-    item_types = column_list
-    item_types = set(item_types)
-    count_items = []
-    for types in column_list:
-        if types.lower() == 'male':
-            sorted(count_items.append(types), key=list)
-        elif types.lower() == 'female':
-            sorted(count_items.append(types), key=list)
+# Função retorna os tipos e quantidade de cada um deles,
+# Declaro um dicionário item_types e crio as listas apartir da
+# Chave 'keys()' e dos valores 'values()'.
+    item_types = {}
+    for i in column_list:
+        if str(i) in item_types.keys():
+            item_types[str(i)] += 1
         else:
-            sorted(count_items.append(types), key=list)
-        
-    return [item_types, count_items]
+            item_types[str(i)] = 1
+    
+    types = list(item_types.keys())
+    count_items = list(item_types.values())
+
+    return [types, count_items]
 
 
 if answer == "yes":
