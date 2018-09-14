@@ -18,7 +18,7 @@ def create_data_list(filename):
     return data_list
 
 
-data_list = create_data_list('/Users/Alexandre/Documents/chicago.csv')
+data_list = create_data_list('chicago.csv')
 
 print("Ok!")
 
