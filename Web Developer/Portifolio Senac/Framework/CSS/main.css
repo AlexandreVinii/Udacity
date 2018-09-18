@@ -1,0 +1,73 @@
+* {
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
+    line-height: normal;
+}
+
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body {
+    padding-bottom: 40px;
+    color: #5a5a5a;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.navbar-nav>li {
+    float: left;
+    font-size: 15px;
+}
+
+.hero {
+    position: relative;
+    min-width: 100%;
+    height: 500px;
+    margin-bottom: 60px;
+    padding: 0;
+}
+
+.hero-img {
+    background: url("../img/ale.jpg") no-repeat top;
+    background-size: contain;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    filter: grayscale(1);
+    position: absolute;
+    background-color: #fff;
+}
+
+.hero-text .btm {
+    margin-top: 20px;
+}
+
+.hero-text {
+    z-index: 10;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 70px;
+    text-align: center;
+    color: #fff;
+}
+
+.headline,
+.teaser {
+    text-shadow: 1px 1px 1px #000;
+}
+
+.headline {
+    font-size: 48px;
+}
+
+.teaser {
+    font-size: 18px;
+}
