@@ -58,12 +58,12 @@ body {
     border-radius: 82%;
     background-color: azure;
 }
-#shadow-a{
+.shadow-a{
     text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
         0 0 0.2em #87F;
     }
 
-div#pos{
+div.pos{
     margin: 0 auto;
     position: relative;
     left: 30%;
