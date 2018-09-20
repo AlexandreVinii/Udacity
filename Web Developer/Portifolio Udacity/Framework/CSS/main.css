@@ -1,14 +1,10 @@
 * {
     font-family: 'Arvo', sans-serif;
-    font-size: 16px;
     line-height: normal;
     color: aliceblue;
 }
 
 * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    -ms-box-sizing: border-box;
     box-sizing: border-box;
 }
 
@@ -17,7 +13,6 @@ body {
     color: #5a5a5a;
     background-image: url("../img/photo-1526925539332-aa3b66e35444.jpeg");
     background-repeat: no-repeat;
-    background: cover;
     text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
         0 0 0.2em #87F;
 }
@@ -31,20 +26,18 @@ body {
     background-color: rgb(61, 0, 230);
     border: 1px solid rgb(82, 40, 197);
     border-radius: 45px;
-    -webkit-transition: all .2s ease-in-out;
-    -o-transition: all .2s ease-in-out;
     transition: all .2s ease-in-out;
 }
 
-.img-resp{
+.img-resp {
     display: block;
     max-width: 100%;
     margin: auto;
     border-radius: 50%;
-    height: -webkit-fill-available;
+    height: auto;
 }
 
-.img-resp1{
+.img-resp1 {
     display: block;
     max-width: 100%;
     margin: auto;
@@ -52,18 +45,19 @@ body {
     height: auto;
 }
 
-.icon-git{
-    max-width: 13%;
+.icon-git {
+    max-width: 10%;
     height: auto;
     border-radius: 82%;
     background-color: azure;
 }
-.shadow-a{
+
+.shadow-a {
     text-shadow: 0 0 0.2em #87F, 0 0 0.2em #87F,
         0 0 0.2em #87F;
-    }
+}
 
-div.pos{
+div.pos {
     margin: 0 auto;
     position: relative;
     left: 30%;
